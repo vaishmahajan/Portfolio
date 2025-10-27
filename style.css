@@ -1,0 +1,957 @@
+/* =========================================================
+   VAISHNAVI MAHAJAN PORTFOLIO STYLING - HORIZONTAL NAV + SECTION BORDERS
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* === Background Video === */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(50%) contrast(1.1);
+}
+
+/* === Top-Left Horizontal Navbar === */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  width: calc(100% - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  padding: 12px 30px;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  margin-right: 30px;
+}
+
+#main-nav {
+  display: flex;
+  gap: 20px;
+}
+
+#main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+#main-nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+/* === Hero Section === */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 5% 100px;
+  position: relative;
+}
+
+.hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 600px;
+  animation: fadeIn 2s ease;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin: 15px 0;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+}
+
+.role-title {
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #ffd700;
+}
+
+/* === Hero Image with Moving Shapes === */
+.hero-image-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  position: relative;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* === Moving Shape Effects === */
+.hero-image-container::before,
+.hero-image-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 1;
+  animation: moveShapes 6s infinite alternate ease-in-out;
+}
+
+.hero-image-container::before {
+  width: 120px;
+  height: 120px;
+  border: 1.5px dashed #ffd700;
+  top: -30px;
+  left: -40px;
+  animation-delay: 1s;
+}
+
+.hero-image-container::after {
+  width: 160px;
+  height: 160px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  bottom: -40px;
+  right: -50px;
+  animation-delay: 2s;
+}
+
+/* === Floating Polygons Animation === */
+@keyframes moveShapes {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(20deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(-20deg) scale(1);
+  }
+}
+
+/* === Section Titles === */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* === General Section Padding === */
+section {
+  padding: 100px 10%;
+}
+
+/* === Summary Section === */
+.summary-section {
+  text-align: center;
+  line-height: 1.8;
+}
+
+.extended-summary-text {
+  font-size: 1.1rem;
+  text-align: justify;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* === Project, Skills, Education, Contact sections === */
+/* Unified styling for cards and containers */
+.project-card,
+.skill-card-item .skill-card,
+.timeline-item,
+.achievement-card,
+.contact-form-wrapper {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* === Divider Between Experience and Education === */
+.experience-section {
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+}
+/* =========================================================
+   EXPERIENCE SECTION – 3D ROTATABLE BLOCKS
+========================================================= */
+
+.experience-section {
+  padding: 100px 10%;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+  perspective: 1000px;
+}
+
+.experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.exp-card {
+  width: 340px;
+  height: 260px; /* Base fixed height for desktop 3D flip */
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.exp-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.exp-card:hover .exp-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.exp-front, .exp-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 25px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.25);
+  backface-visibility: hidden;
+  color: #fff;
+}
+
+/* Front Card */
+.exp-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.exp-front h3 {
+  font-size: 1.1rem;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.exp-front .company {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Back Card */
+.exp-back {
+  transform: rotateY(180deg);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+.exp-back ul {
+  margin-top: 10px;
+  list-style-type: "➤ ";
+  padding-left: 15px;
+}
+
+.exp-back li {
+  margin: 5px 0;
+}
+
+/* Glowing Edge Animation */
+.exp-card::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  border-radius: 22px;
+  background: linear-gradient(45deg, #ffd700, #ff7b00, #ff00c8, #00fff0, #ffd700);
+  background-size: 400%;
+  animation: glowing 8s linear infinite;
+  z-index: -1;
+}
+
+@keyframes glowing {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===============================
+   PROJECTS SECTION (New Hover/Flip Style)
+================================== */
+.projects-section {
+  padding: 100px 10%;
+  text-align: center;
+  color: #fff;
+}
+
+.projects-section h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #f9d423;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  margin-bottom: 40px;
+}
+
+/* NEW PROJECT SLIDER CSS */
+.project-slider-wrapper {
+  margin: 40px auto;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+}
+#project-slider-track {
+  display: flex;
+  gap: 30px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+}
+#project-slider-track::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for aesthetics */
+}
+
+/* Card base structure for 3D flip */
+.project-card {
+    min-width: 300px;
+    height: 280px; /* Adjusted height for content */
+    perspective: 1000px;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    transition: none;
+    position: relative;
+}
+
+/* Inner container for the 3D flip effect */
+.project-card:hover {
+    transform: none; 
+    box-shadow: none;
+}
+
+.project-card .card-front,
+.project-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    transition: transform 0.8s;
+    backface-visibility: hidden; /* Essential for 3D flip */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* FRONT FACE (Initial State) */
+.project-card .card-front {
+    transform: rotateY(0deg);
+}
+.project-card h3 {
+    color: #ffd700;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-shadow: none;
+}
+.project-card .project-icon {
+    font-size: 3rem;
+    color: #fff;
+    margin-top: 15px;
+}
+.project-card .card-front p {
+    font-size: 0.9rem;
+}
+
+
+/* BACK FACE (Hidden initially, rotated 180 degrees) */
+.project-card .card-back {
+    transform: rotateY(180deg);
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.project-card .card-back .description-text {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    flex-grow: 1; 
+}
+.project-card .card-back .tech-stack {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: left;
+    width: 100%;
+}
+.project-card .card-back .tech-stack strong {
+    color: #ffd700;
+}
+
+/* HOVER EFFECT: Flip the card */
+.project-card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+
+.project-card:hover .card-back {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 30px #ffd700; /* Add extra glow on hover */
+}
+
+/* Button style adjustments for the back face */
+.project-card .card-back .btn-view {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding: 8px 15px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+.project-card .card-back .btn-view:hover {
+    transform: scale(1.02);
+}
+
+
+.slider-controls {
+    text-align: center;
+}
+
+.slider-controls button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.slider-controls button:hover {
+    background: #ffd700;
+    color: #000;
+}
+
+
+/* ===============================
+   SKILLS SECTION (3D Circular Rotation)
+================================== */
+.skills-section {
+    padding: 100px 10%;
+    position: relative;
+    overflow: hidden;
+    perspective: 1200px; 
+    text-align: center;
+}
+
+.skills-carousel-wrapper {
+    max-width: 100%;
+    margin: 40px auto 0;
+    height: 400px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.skills-carousel-track {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: rotateSkills 30s linear infinite; /* Rotation speed */
+}
+
+/* HOVER EFFECT: Pause rotation when mouse is over the track */
+.skills-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+/* Left to Right Rotation requested by user */
+@keyframes rotateSkills {
+    from { transform: rotateY(0deg); } 
+    to { transform: rotateY(-360deg); }
+}
+
+.skill-card-item {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    cursor: default;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    margin-left: -125px; 
+    margin-top: -75px; 
+    transform-origin: center center -350px; /* Z-distance for circular layout */
+}
+
+/* Position the 6 cards in a cylinder */
+.skill-card-item:nth-child(1) { transform: rotateY(0deg) translateZ(350px); }
+.skill-card-item:nth-child(2) { transform: rotateY(60deg) translateZ(350px); }
+.skill-card-item:nth-child(3) { transform: rotateY(120deg) translateZ(350px); }
+.skill-card-item:nth-child(4) { transform: rotateY(180deg) translateZ(350px); }
+.skill-card-item:nth-child(5) { transform: rotateY(240deg) translateZ(350px); }
+.skill-card-item:nth-child(6) { transform: rotateY(300deg) translateZ(350px); }
+
+
+/* Hover Effect: Bring the specific card forward/in-line and apply a glow */
+.skill-card-item:hover {
+    transform: translateZ(400px) scale(1.1) !important; 
+    box-shadow: 0 0 50px #ffd700;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    border: none;
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+.skill-logo {
+    font-size: 2.5rem;
+    color: #fff;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    margin-bottom: 10px;
+}
+
+.certifications-list {
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+.certifications-list h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 25px; /* Added spacing */
+}
+.certifications-list ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between certification cards */
+}
+
+/* STYLING FOR CERTIFICATION LIST ITEMS */
+.certifications-list ul li {
+    margin: 0; /* Override existing margin */
+    font-size: 1rem;
+    opacity: 1; /* Ensure full visibility */
+    
+    /* Card/Block Styling */
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid #ffd700; /* Gold border */
+    border-left: 5px solid #ffd700; /* Stronger accent line on the left */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+    text-align: left;
+    
+    /* Highlight the Certification Name/Source */
+    font-weight: 500;
+}
+
+.certifications-list ul li:hover {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5); /* Stronger glow on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+/* ===============================
+   EDUCATION & ACHIEVEMENT SECTION (Alignment Fix)
+================================== */
+.education-section {
+    padding: 100px 10%;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.education-timeline {
+    max-width: 100%;
+}
+.timeline-item {
+    margin-bottom: 30px;
+    border-left: 3px solid #ffd700;
+    padding-left: 20px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 25px;
+    width: 20px;
+    height: 20px;
+    background: #ffd700;
+    border-radius: 50%;
+    border: 3px solid #333;
+    z-index: 1;
+}
+
+.timeline-item h4 {
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+.timeline-item .institution {
+    opacity: 0.9;
+    font-weight: 500;
+}
+.timeline-item .duration {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Notable Accomplishments Alignment Fix */
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: flex-start; /* Aligns content to the top */
+    text-align: left;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); 
+    border-radius: 10px;
+}
+
+.achievement-card i {
+    font-size: 2rem; 
+    color: #ff9900;
+    margin-right: 15px;
+    min-width: 30px; 
+    text-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
+    margin-top: 5px; 
+}
+
+.achievement-card h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.achievement-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* === KEYFRAMES FOR MOBILE ANIMATIONS (Low-cost, elegant motion) === */
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 4px rgba(255, 255, 255, 0.2); }
+  100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
+}
+
+@keyframes floatMobile {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.01); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* === Responsive Adjustments === */
+@media (max-width: 992px) {
+    .navbar {
+        position: fixed;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        justify-content: center;
+        border-radius: 0;
+        gap: 10px; 
+        padding: 10px 10px; 
+        flex-wrap: wrap; 
+        border-width: 0 0 1px 0; 
+    }
+    .logo {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem; 
+    }
+    #main-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px; 
+    }
+    #main-nav a {
+        padding: 6px 12px; 
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .hero-section {
+        padding-top: 100px; 
+        min-height: auto; 
+    }
+    
+    .hero-grid {
+        flex-direction: column;
+        gap: 30px; 
+    }
+
+    .hero-image-container {
+        margin-top: 20px; 
+        width: 250px;
+        height: 250px;
+    }
+    
+    /* ---------------------------------------------------- */
+    /* MOBILE-SPECIFIC MOTION (Restores or replaces 3D effects) */
+    /* ---------------------------------------------------- */
+    
+    /* HERO IMAGE: Pulsing Glow */
+    .hero-image-container img {
+        animation: pulseGlow 3s infinite alternate ease-in-out;
+    }
+
+    /* REMOVING COMPLEX 3D SHAPES */
+    .hero-image-container::before,
+    .hero-image-container::after {
+        content: none;
+    }
+
+    /* GENERAL CONTENT: Slide In (Staggered) */
+    .extended-summary-text, 
+    .project-slider-wrapper .project-card, 
+    .education-grid .timeline-item,
+    .education-grid .achievement-card,
+    .certifications-list ul li {
+        animation: slideInUp 0.6s ease-out forwards;
+        opacity: 0; 
+    }
+
+    /* EXPERIENCE SECTION FIXES (Stacking and fluid height) */
+    .experience-container {
+        gap: 30px; 
+    }
+    .exp-card {
+        width: 100%; 
+        max-width: 450px; 
+        height: auto; /* Critical fix: fluid height */
+        min-height: 200px; 
+        margin: 0 auto; 
+        animation: slideInUp 0.6s ease-out forwards; /* Apply slide animation here */
+        opacity: 0;
+    }
+    .exp-card:nth-child(odd) { animation-delay: 0.1s; }
+    .exp-card:nth-child(even) { animation-delay: 0.2s; }
+    
+    .exp-inner, .exp-front, .exp-back {
+        position: relative; 
+        height: 100%; 
+        min-height: inherit;
+    }
+    .exp-back {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        min-height: 100%; 
+    }
+    
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+  
+    /* Project Slider on mobile: Remove controls, rely on touch scroll */
+    .slider-controls {
+        display: none;
+    }
+    .project-card {
+        min-width: 85%; 
+    }
+
+    /* SKILLS CAROUSEL: Convert to static flex layout with subtle float animation */
+    .skills-carousel-wrapper {
+        height: auto;
+        perspective: none;
+    }
+    .skills-carousel-track {
+        animation: none; /* Disable 3D rotation */
+        transform-style: flat;
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .skill-card-item {
+        position: relative;
+        transform: none !important; 
+        flex: 1 1 45%; 
+        margin: 0;
+        height: 150px; 
+        width: 45%;
+        left: auto;
+        top: auto;
+        margin-left: 0; 
+        margin-top: 0; 
+        transform-origin: center;
+        
+        /* New Mobile Animation: Float + Slide In */
+        animation: floatMobile 5s infinite ease-in-out, slideInUp 0.6s ease-out forwards;
+        opacity: 0;
+    }
+    
+    /* Stagger the skill card animations */
+    .skill-card-item:nth-child(1) { animation-delay: 0.1s; }
+    .skill-card-item:nth-child(2) { animation-delay: 0.2s; }
+    .skill-card-item:nth-child(3) { animation-delay: 0.3s; }
+    .skill-card-item:nth-child(4) { animation-delay: 0.4s; }
+    .skill-card-item:nth-child(5) { animation-delay: 0.5s; }
+    .skill-card-item:nth-child(6) { animation-delay: 0.6s; }
+
+    .skill-card-item:hover {
+        transform: none !important;
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); 
+    }
+    
+    .summary-section .extended-summary-text {
+        text-align: left;
+        font-size: 1rem;
+    }
+    
+    .certifications-list ul {
+        gap: 10px; 
+    }
+    
+    .certifications-list ul li {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        animation-delay: 0.7s; /* Delay certs to slide in after main skills */
+    }
+}
